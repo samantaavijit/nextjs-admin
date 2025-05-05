@@ -21,7 +21,7 @@ export default function Home() {
       </Suspense> */}
       {/* <AnimatedBackground /> */}
 
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 -z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,7 +39,7 @@ export default function Home() {
             ease: "linear",
           }}
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-9 2xl:gap-7.5">
         <PaymentsOverview
