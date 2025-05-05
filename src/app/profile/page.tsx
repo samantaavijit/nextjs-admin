@@ -15,7 +15,7 @@ export default function Page() {
   });
 
   const handleChange = (e: any) => {
-    if (e.target.name === "profilePhoto" ) {
+    if (e.target.name === "profilePhoto") {
       const file = e.target?.files[0];
 
       setData({
@@ -41,9 +41,9 @@ export default function Page() {
     <div className="mx-auto w-full max-w-[970px]">
       <Breadcrumb pageName="Profile" />
 
-      <div className="overflow-hidden rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
+      <div className="overflow-hidden rounded-[10px] shadow-1 dark:shadow-card">
         <div className="relative z-20 h-35 md:h-65">
-          <Image
+          {/* <Image
             src={data?.coverPhoto}
             alt="profile cover"
             className="h-full w-full rounded-tl-[10px] rounded-tr-[10px] object-cover object-center"
@@ -53,7 +53,7 @@ export default function Page() {
               width: "auto",
               height: "auto",
             }}
-          />
+          /> */}
           <div className="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4">
             <label
               htmlFor="cover"
