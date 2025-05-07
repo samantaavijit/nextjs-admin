@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import LoginButton from "../custom/LoginButton";
 import { IoCloseSharp } from "react-icons/io5";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,6 +15,7 @@ const navigation = [
 ];
 
 export default function DefaultNavbar() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -54,7 +56,9 @@ export default function DefaultNavbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-dark-700 text-sm font-semibold leading-6 transition-colors hover:text-white"
+              className={`text-dark-700 text-lg font-bold leading-6 transition-colors hover:text-white ${
+                pathname === item.href ? "text-blue-500" : ""
+              }`}
             >
               {item.name}
             </Link>
@@ -91,7 +95,9 @@ export default function DefaultNavbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-dark-700 hover:bg-dark-300 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors hover:text-white"
+                    className={`text-dark-700 hover:bg-dark-300 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-colors hover:text-white ${
+                      pathname === item.href ? "text-blue-500" : ""
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
