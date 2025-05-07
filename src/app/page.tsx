@@ -52,28 +52,42 @@ export default function LandingPage() {
       {/* Hero Section */}
       <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b py-24 backdrop-blur-lg sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h1 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-              Learn Programming the Right Way
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Start your coding journey with our comprehensive courses. Learn
-              from industry experts and build real-world projects.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link href="/courses">
-                <button />
-              </Link>
-              <Link href="/about">
-                <button />
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <h1 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
+                Learn Programming the Right Way
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                Start your coding journey with our comprehensive courses. Learn
+                from industry experts and build real-world projects.
+              </p>
+              <div className="mt-10 flex items-center gap-x-6">
+                {/* <Link href="/courses">
+                  <Button variant="primary">Browse Courses</Button>
+                </Link>
+                <Link href="/about">
+                  <Button variant="secondary">Learn More</Button>
+                </Link> */}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <img
+                src="/hero.png"
+                alt="Programming Illustration"
+                className="mx-auto h-auto w-full max-w-lg"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 
