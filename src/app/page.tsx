@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function LandingPage() {
   return (
-    <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden">
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden pt-24">
       <motion.div
         className="absolute inset-0 -z-10"
         initial={{ opacity: 0 }}
@@ -23,7 +23,6 @@ export default function LandingPage() {
           }}
         />
       </motion.div>
-      <div className="relative z-10 text-center text-white">Landing Page</div>
-    </div>
+    </main>
   );
 }
