@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import LoginButton from "../custom/LoginButton";
-import { Dialog } from "@headlessui/react";
 import { IoCloseSharp } from "react-icons/io5";
 
 const navigation = [
@@ -73,20 +72,9 @@ export default function DefaultNavbar() {
         </motion.div>
       </nav>
 
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="bg-dark-200/95 sm:ring-dark-400 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 backdrop-blur-md sm:max-w-sm sm:ring-1">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-2xl font-bold text-transparent">
-                Tech Academy
-              </span>
-            </Link>
+      {mobileMenuOpen && (
+        <div className="bg-dark-200/95 fixed inset-0 z-50 ms-5 backdrop-blur-md lg:hidden">
+          <div className="absolute right-0 top-0 p-6">
             <button
               type="button"
               className="text-dark-700 -m-2.5 rounded-md p-2.5 transition-colors hover:text-white"
@@ -117,8 +105,8 @@ export default function DefaultNavbar() {
               </div>
             </div>
           </div>
-        </Dialog.Panel>
-      </Dialog>
+        </div>
+      )}
     </header>
   );
 }
