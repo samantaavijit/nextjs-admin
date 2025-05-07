@@ -2,9 +2,9 @@
 
 import AfterLoginNavbar from "@/components/Layouts/AfterLoginNavbar";
 import DefaultNavbar from "@/components/Layouts/DefaultNavbar";
-import { Header } from "@/components/Layouts/header";
 import { Sidebar } from "@/components/Layouts/sidebar";
-import { SidebarProvider } from "@/components/Layouts/sidebar/sidebar-context";
+import { SidebarProvider } from "@/context/SidebarContext";
+
 import AnimatedBackground from "@/utils/AnimatedBackground";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";

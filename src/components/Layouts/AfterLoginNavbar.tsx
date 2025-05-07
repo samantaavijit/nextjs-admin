@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 // import { Notification } from "./notification";
-import { useSidebarContext } from "./sidebar/sidebar-context";
+
 import { UserInfo } from "./header/user-info";
 import { MenuIcon } from "./header/icons";
+import { useSidebarContext } from "@/context/SidebarContext";
 
 export default function AfterLoginNavbar() {
   const { toggleSidebar, isMobile } = useSidebarContext();
