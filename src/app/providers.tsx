@@ -1,10 +1,9 @@
 "use client";
 
+import AdminSidebar from "@/components/Layouts/AdminSidebar";
 import AfterLoginNavbar from "@/components/Layouts/AfterLoginNavbar";
 import DefaultNavbar from "@/components/Layouts/DefaultNavbar";
-import { Sidebar } from "@/components/Layouts/sidebar";
 import { SidebarProvider } from "@/context/SidebarContext";
-
 import AnimatedBackground from "@/utils/AnimatedBackground";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
@@ -21,7 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <SidebarProvider>
         <NextTopLoader color="#5750F1" showSpinner={false} />
         <div className="flex min-h-screen">
-          {/* <Sidebar /> */}
+          {isAdminRoute && <AdminSidebar />}
 
           <div className="w-full bg-gray-2 dark:bg-[#020d1a]">
             {isAdminRoute || isStudentRoute || isNormalUserRoute ? (

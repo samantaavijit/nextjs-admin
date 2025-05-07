@@ -1,24 +1,23 @@
-import * as Icons from "../icons";
-
-export const NAV_DATA = [
+import * as Icons from "@/components/Layouts/sidebar/icons";
+export const ADMIN_NAV_MENU = [
   {
     label: "MAIN MENU",
     items: [
       {
         title: "Dashboard",
         icon: Icons.HomeIcon,
-        url: "/",
+        url: "/admin",
         items: [],
       },
       {
         title: "Calendar",
-        url: "/calendar",
+        url: "/admin/calendar",
         icon: Icons.Calendar,
         items: [],
       },
       {
         title: "Profile",
-        url: "/profile",
+        url: "/admin/profile",
         icon: Icons.User,
         items: [],
       },

@@ -1,16 +1,15 @@
 "use client";
 
-import { Logo } from "@/components/logo";
+import { useSidebarContext } from "@/context/SidebarContext";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV_DATA } from "./data";
-import { ArrowLeftIcon, ChevronUp } from "./icons";
-import { MenuItem } from "./menu-item";
-import { useSidebarContext } from "./sidebar-context";
+import { ADMIN_NAV_MENU } from "@/utils/AllMenuData";
+import { FaArrowLeft, FaChevronUp } from "react-icons/fa";
+import { MenuItem } from "@/utils/MenuItem";
 
-export function Sidebar() {
+export default function AdminSidebar() {
   const pathname = usePathname();
   const { setIsOpen, isOpen, isMobile, toggleSidebar } = useSidebarContext();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
@@ -26,7 +25,7 @@ export function Sidebar() {
 
   useEffect(() => {
     // Keep collapsible open, when it's subpage is active
-    NAV_DATA.some((section) => {
+    ADMIN_NAV_MENU.some((section) => {
       return section.items.some((item) => {
         return item.items.some((subItem) => {
           if (subItem.url === pathname) {
@@ -66,11 +65,11 @@ export function Sidebar() {
         <div className="flex h-full flex-col py-10 pl-[25px] pr-[7px]">
           <div className="relative pr-4.5">
             <Link
-              href={"/"}
+              href="/admin"
               onClick={() => isMobile && toggleSidebar()}
               className="px-0 py-2.5 min-[850px]:py-0"
             >
-              <Logo />
+              {/* <Logo /> */}
             </Link>
 
             {isMobile && (
@@ -80,14 +79,14 @@ export function Sidebar() {
               >
                 <span className="sr-only">Close Menu</span>
 
-                <ArrowLeftIcon className="ml-auto size-7" />
+                <FaArrowLeft className="ml-auto size-7" />
               </button>
             )}
           </div>
 
           {/* Navigation */}
           <div className="custom-scrollbar mt-6 flex-1 overflow-y-auto pr-3 min-[850px]:mt-10">
-            {NAV_DATA.map((section) => (
+            {ADMIN_NAV_MENU.map((section) => (
               <div key={section.label} className="mb-6">
                 <h2 className="mb-5 text-sm font-medium text-dark-4 dark:text-dark-6">
                   {section.label}
@@ -112,7 +111,7 @@ export function Sidebar() {
 
                               <span>{item.title}</span>
 
-                              <ChevronUp
+                              <FaChevronUp
                                 className={cn(
                                   "ml-auto rotate-180 transition-transform duration-200",
                                   expandedItems.includes(item.title) &&
