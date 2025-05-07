@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
 import LoginButton from "../custom/LoginButton";
 import { IoCloseSharp } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import { Dialog, DialogPanel } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -17,9 +18,29 @@ const navigation = [
 export default function DefaultNavbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const handleMouseMove = () => {
+      setIsTransparent(false);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setIsTransparent(true), 2000);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 border-b border-stroke bg-white shadow-1 transition-all duration-300 dark:border-stroke-dark dark:bg-gray-dark md:px-5 2xl:px-10">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 ${isTransparent ? "bg-transparent" : "bg-dark-200/80 shadow-lg backdrop-blur-md"} transition-all duration-300`}
+    >
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -76,9 +97,20 @@ export default function DefaultNavbar() {
         </motion.div>
       </nav>
 
-      {mobileMenuOpen && (
-        <div className="bg-dark-200/95 fixed inset-0 z-50 ms-5 backdrop-blur-md lg:hidden">
-          <div className="absolute right-0 top-0 p-6">
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
+        <div className="fixed inset-0 z-50" />
+        <DialogPanel className="bg-dark-200/95 sm:ring-dark-400 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 backdrop-blur-md sm:max-w-sm sm:ring-1">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-2xl font-bold text-transparent">
+                Tech Academy
+              </span>
+            </Link>
             <button
               type="button"
               className="text-dark-700 -m-2.5 rounded-md p-2.5 transition-colors hover:text-white"
@@ -111,8 +143,8 @@ export default function DefaultNavbar() {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        </DialogPanel>
+      </Dialog>
     </header>
   );
 }
