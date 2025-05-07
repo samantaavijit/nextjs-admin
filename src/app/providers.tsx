@@ -12,11 +12,9 @@ import NextTopLoader from "nextjs-toploader";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAdminRoute = pathname.startsWith("/admin/") && pathname !== "/admin";
-  const isStudentRoute =
-    pathname.startsWith("/student/") && pathname !== "/student";
-  const isNormalUserRoute =
-    pathname.startsWith("/user/") && pathname !== "/user";
+  const isAdminRoute = pathname.startsWith("/admin");
+  const isStudentRoute = pathname.startsWith("/student");
+  const isNormalUserRoute = pathname.startsWith("/user");
 
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">

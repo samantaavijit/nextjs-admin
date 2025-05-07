@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function AdminLoginPage() {
-  return <div>AdminLoginPage</div>;
+export default function AdminDashboardPage() {
+  return <div>AdminDashboardPage</div>;
 }
