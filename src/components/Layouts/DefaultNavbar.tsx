@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import LoginButton from "../custom/LoginButton";
 import { IoCloseSharp } from "react-icons/io5";
@@ -18,24 +18,6 @@ const navigation = [
 export default function DefaultNavbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isTransparent, setIsTransparent] = useState(true);
-
-  useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-
-    const handleMouseMove = () => {
-      setIsTransparent(false);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsTransparent(true), 2000);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      clearTimeout(timeout);
-    };
-  }, []);
 
   return (
     <header
