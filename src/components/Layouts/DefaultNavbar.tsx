@@ -53,7 +53,7 @@ export default function DefaultNavbar() {
         >
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent">
-              Tech Academy
+              Tech Learn Academy
             </span>
           </Link>
         </motion.div>

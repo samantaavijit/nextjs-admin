@@ -5,8 +5,8 @@ import Link from "next/link";
 // import { Notification } from "./notification";
 
 import { UserInfo } from "./header/user-info";
-import { MenuIcon } from "./header/icons";
 import { useSidebarContext } from "@/context/SidebarContext";
+import { GrMenu } from "react-icons/gr";
 
 export default function AfterLoginNavbar() {
   const { toggleSidebar, isMobile } = useSidebarContext();
@@ -17,12 +17,12 @@ export default function AfterLoginNavbar() {
         onClick={toggleSidebar}
         className="rounded-lg border px-1.5 py-1 dark:border-stroke-dark dark:bg-[#020D1A] hover:dark:bg-[#FFFFFF1A] lg:hidden"
       >
-        <MenuIcon />
+        <GrMenu />
         <span className="sr-only">Toggle Sidebar</span>
       </button>
 
       {isMobile && (
-        <Link href={"/"} className="ml-2 max-[430px]:hidden min-[375px]:ml-4">
+        <Link href="/" className="ml-2 max-[430px]:hidden min-[375px]:ml-4">
           <Image
             src={"/images/logo/logo-icon.svg"}
             width={32}
@@ -34,10 +34,9 @@ export default function AfterLoginNavbar() {
       )}
 
       <div className="max-xl:hidden">
-        <h1 className="mb-0.5 text-heading-5 font-bold text-dark dark:text-white">
-          Dashboard
+        <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent">
+          Tech Learn Academy
         </h1>
-        <p className="font-medium">Next.js Admin Dashboard Solution</p>
       </div>
 
       <div className="flex flex-1 items-center justify-end gap-2 min-[375px]:gap-4">
