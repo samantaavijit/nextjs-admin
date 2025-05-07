@@ -91,7 +91,7 @@ export default function DefaultNavbar() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="hidden lg:flex lg:flex-1 lg:justify-end"
         >
-          <Link href="/login">
+          <Link href="/auth/sign-in">
             <LoginButton />
           </Link>
         </motion.div>
@@ -137,7 +137,10 @@ export default function DefaultNavbar() {
                 ))}
               </div>
               <div className="py-6">
-                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                <Link
+                  href="/auth/sign-in"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <LoginButton />
                 </Link>
               </div>

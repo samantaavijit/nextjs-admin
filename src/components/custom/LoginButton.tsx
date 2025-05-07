@@ -5,7 +5,7 @@ const LoginButton = () => {
   return (
     <StyledWrapper>
       <button data-label="Register" className="rainbow-hover">
-        <span className="sp">Register</span>
+        <span className="sp">Login</span>
       </button>
     </StyledWrapper>
   );
