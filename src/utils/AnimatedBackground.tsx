@@ -6,7 +6,9 @@ const AnimatedBackground = () => {
     { id: 1, icon: "/javascript.svg", initialX: "10%", initialY: "10%" },
     { id: 2, icon: "/python.svg", initialX: "70%", initialY: "20%" },
     { id: 3, icon: "/react.svg", initialX: "20%", initialY: "60%" },
-    { id: 4, icon: "/next.svg", initialX: "80%", initialY: "70%" },
+    { id: 5, icon: "/T.svg", initialX: "30%", initialY: "30%" },
+    { id: 6, icon: "/L.svg", initialX: "50%", initialY: "50%" },
+    { id: 7, icon: "/A.svg", initialX: "80%", initialY: "70%" },
   ];
 
   return (
