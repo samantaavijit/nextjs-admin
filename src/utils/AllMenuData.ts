@@ -1,29 +1,39 @@
-import * as Icons from "@/components/Layouts/sidebar/icons";
+import {
+  MdDashboard,
+  MdCalendarToday,
+  MdPerson,
+  MdTextFields,
+  MdTableChart,
+  MdPieChart,
+  MdOutlineCircle,
+  MdLock,
+} from "react-icons/md";
+
 export const ADMIN_NAV_MENU = [
   {
     label: "MAIN MENU",
     items: [
       {
         title: "Dashboard",
-        icon: Icons.HomeIcon,
+        icon: MdDashboard,
         url: "/admin",
         items: [],
       },
       {
         title: "Calendar",
         url: "/admin/calendar",
-        icon: Icons.Calendar,
+        icon: MdCalendarToday,
         items: [],
       },
       {
         title: "Profile",
         url: "/admin/profile",
-        icon: Icons.User,
+        icon: MdPerson,
         items: [],
       },
       {
         title: "Forms",
-        icon: Icons.Alphabet,
+        icon: MdTextFields,
         items: [
           {
             title: "Form Elements",
@@ -38,7 +48,7 @@ export const ADMIN_NAV_MENU = [
       {
         title: "Tables",
         url: "/tables",
-        icon: Icons.Table,
+        icon: MdTableChart,
         items: [
           {
             title: "Tables",
@@ -48,7 +58,7 @@ export const ADMIN_NAV_MENU = [
       },
       {
         title: "Pages",
-        icon: Icons.Alphabet,
+        icon: MdTextFields,
         items: [
           {
             title: "Settings",
@@ -63,7 +73,7 @@ export const ADMIN_NAV_MENU = [
     items: [
       {
         title: "Charts",
-        icon: Icons.PieChart,
+        icon: MdPieChart,
         items: [
           {
             title: "Basic Chart",
@@ -73,7 +83,7 @@ export const ADMIN_NAV_MENU = [
       },
       {
         title: "UI Elements",
-        icon: Icons.FourCircle,
+        icon: MdOutlineCircle,
         items: [
           {
             title: "Alerts",
@@ -87,7 +97,7 @@ export const ADMIN_NAV_MENU = [
       },
       {
         title: "Authentication",
-        icon: Icons.Authentication,
+        icon: MdLock,
         items: [
           {
             title: "Sign In",
