@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import Tilt from "react-parallax-tilt";
 
 export default function LandingPage() {
   const popularCourses = [
@@ -82,11 +84,15 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <img
-                src="/hero.png"
-                alt="Programming Illustration"
-                className="mx-auto h-auto w-full max-w-lg"
-              />
+              <Tilt>
+                <Image
+                  src="/hero.png"
+                  alt="Programming Illustration"
+                  // className="mx-auto h-auto w-full max-w-lg"
+                  width={600}
+                  height={450}
+                />
+              </Tilt>
             </motion.div>
           </div>
         </div>
