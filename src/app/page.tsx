@@ -212,12 +212,15 @@ export default function LandingPage() {
       </div>
 
       {/* Popular Courses Section */}
-      <section className="w-full py-24 backdrop-blur-lg">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+      <section className="w-full py-10 backdrop-blur-lg">
+        <div className="mx-auto w-[80%] pb-8 pt-8">
+          <div className="flex items-center justify-between">
             <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
               Popular Courses
             </h2>
+            <Link href="/courses">
+              <Button text="View All" variant="learn_more" />
+            </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-10 md:mt-16 lg:grid-cols-2 xl:grid-cols-3">
@@ -225,39 +228,63 @@ export default function LandingPage() {
               return <CourseCard key={key} course={course} />;
             })}
           </div>
-
-          {/* <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {popularCourses.map((course, index) => (
-              <article
-                key={index}
-                className="border-dark-300 bg-dark-200/30 flex flex-col items-start justify-between rounded-2xl border p-6 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl"
-              >
-                <div className="relative w-full">
-                  <div className="flex items-center gap-x-4 text-xs">
-                    <time dateTime="2020-03-16" className="text-gray-500">
-                      {course.duration}
-                    </time>
-                    <span className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                      {course.level}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <Link href="/courses">
-                      <span className="absolute inset-0" />
-                      {course.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {course.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div> */}
         </div>
       </section>
 
       {/* Features Section */}
+      <section className="bg-slate-500/10 pb-16 pt-16 backdrop-blur-lg sm:my-32">
+        <div className="mx-auto mt-8 grid w-[80%] grid-cols-1 items-center gap-12 xl:grid-cols-2">
+          {/* IMAGE */}
+          <Tilt>
+            <div>
+              <Image
+                src="/f.png"
+                alt="Learning Experience"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </Tilt>
+          {/* TEXT */}
+
+          <div>
+            {/* Sub heading */}
+            <div className="flex items-center space-x-4">
+              <div className="flex h-12 w-12 flex-col items-center justify-center rounded-full bg-rose-600">
+                <FaAward className="h-6 w-6 text-white" />
+              </div>
+              <h1 className="text-xl font-semibold text-slate-200">
+                Elevate Your Learning Journey
+              </h1>
+            </div>
+            {/* MAIN heading */}
+            <h1 className="mt-8 text-2xl font-bold text-white sm:text-3xl md:text-6xl md:leading-[3rem] lg:leading-[3.5rem] xl:leading-[3.9rem]">
+              Unlock potential with expert guidance.
+            </h1>
+            <div className="mb-6 mt-8">
+              <h1 className="text-lg font-semibold text-white text-opacity-70 md:text-2xl">
+                Learn from Industry Experts
+              </h1>
+              <p className="mt-4 text-sm text-white text-opacity-70 md:text-base">
+                Gain insights from top professionals with hands-on experience in
+                various domains. Stay ahead with up-to-date and practical
+                knowledge.
+              </p>
+            </div>
+            <div className="mb-6 mt-8">
+              <h1 className="text-lg font-semibold text-white text-opacity-70 md:text-2xl">
+                Enhance Your Skills with Practical Learning
+              </h1>
+              <p className="mt-4 text-sm text-white text-opacity-70 md:text-base">
+                Our courses are designed to help you apply what you learn in
+                real-world scenarios. Build projects, test your skills, and grow
+                your expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-dark-300/50 w-full py-24 backdrop-blur-lg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
