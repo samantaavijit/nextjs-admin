@@ -57,15 +57,30 @@ export default function Footer() {
               <div className="text-dark-700 space-y-4">
                 <div className="flex items-center gap-3">
                   <FaEnvelope className="text-blue-500" />
-                  <p>techlearnacademy2025@gmail.com</p>
+                  <a
+                    href="mailto:techlearnacademy2025@gmail.com"
+                    className="hover:underline"
+                  >
+                    techlearnacademy2025@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaPhone className="text-blue-500" />
-                  <p>+91 8145263799</p>
+                  <a href="tel:+918145263799" className="hover:underline">
+                    +91 8145263799
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaMapMarkerAlt className="text-blue-500" />
-                  <p>Ajodhyapur, Patashpur, West Bengal 721439</p>
+                  <a
+                    // href="https://www.google.com/maps/search/?api=1&query=Tech+Learn+Academy"
+                    href="https://www.google.com/maps/place/Tech+Learn+Academy/@22.0706431,87.4934578,20z/data=!4m6!3m5!1s0x3a1d3300792b4fd1:0xf5f6c3995b2e6b96!8m2!3d22.0704909!4d87.4934954!16s%2Fg%2F11m5s0nzj0?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    Ajodhyapur, Patashpur, West Bengal 721439
+                  </a>
                 </div>
               </div>
 
