@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ADMIN_NAV_MENU } from "@/utils/AllMenuData";
 import { FaArrowLeft, FaChevronUp } from "react-icons/fa";
 import { MenuItem } from "@/utils/MenuItem";
+import { ADMIN_NAV_MENU } from "@/data/AllMenuData";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
