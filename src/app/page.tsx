@@ -7,29 +7,39 @@ import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 import { useEffect } from "react";
 import { FaArrowRight, FaAward } from "react-icons/fa";
+import CourseCard from "@/components/CourseCard";
 
 export default function LandingPage() {
-  const popularCourses = [
+  const courses = [
     {
-      title: "JavaScript Fundamentals",
-      description: "Master the basics of JavaScript programming",
+      title: "Web Development Fundamentals",
+      instructor: "John Smith",
       level: "Beginner",
       duration: "8 weeks",
-      image: "/javascript.svg",
+      rating: 4.8,
+      students: 1234,
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
     },
     {
-      title: "Python for Beginners",
-      description: "Start your programming journey with Python",
-      level: "Beginner",
-      duration: "10 weeks",
-      image: "/python.svg",
-    },
-    {
-      title: "React Development",
-      description: "Build modern web applications with React",
+      title: "Data Science Essentials",
+      instructor: "Emily Brown",
       level: "Intermediate",
-      duration: "12 weeks",
-      image: "/react.svg",
+      duration: "10 weeks",
+      rating: 4.9,
+      students: 2341,
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    },
+    {
+      title: "Machine Learning Fundamentals",
+      instructor: "Michael Chen",
+      level: "Intermediate",
+      duration: "14 weeks",
+      rating: 4.9,
+      students: 2198,
+      image:
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     },
   ];
 
@@ -202,20 +212,21 @@ export default function LandingPage() {
       </div>
 
       {/* Popular Courses Section */}
-      <section className="bg-dark-200/50 w-full py-24 backdrop-blur-lg">
+      <section className="w-full py-24 backdrop-blur-lg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+            <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
               Popular Courses
             </h2>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-          >
+          <div className="mt-10 grid grid-cols-1 gap-10 md:mt-16 lg:grid-cols-2 xl:grid-cols-3">
+            {courses.map((course, key) => {
+              return <CourseCard key={key} course={course} />;
+            })}
+          </div>
+
+          {/* <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {popularCourses.map((course, index) => (
               <article
                 key={index}
@@ -242,7 +253,7 @@ export default function LandingPage() {
                 </div>
               </article>
             ))}
-          </motion.div>
+          </div> */}
         </div>
       </section>
 
