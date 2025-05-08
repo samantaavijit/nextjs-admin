@@ -50,8 +50,8 @@ export default function LandingPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b py-24 backdrop-blur-lg sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b pt-24 backdrop-blur-lg sm:py-32">
+        <div className="mx-auto max-w-7xl px-2">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -59,12 +59,13 @@ export default function LandingPage() {
               transition={{ duration: 0.8 }}
               className="text-left"
             >
-              <h1 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-                Learn Programming the Right Way
+              <h1 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                Smart Learning for a Digital Future.
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
-                Start your coding journey with our comprehensive courses. Learn
-                from industry experts and build real-world projects.
+              <p className="mt-6 text-sm text-white text-opacity-60 md:text-base">
+                Empower your future with high-quality Computer education. Join
+                our expert-led courses and excel in academics, programming, and
+                beyond.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 {/* <Link href="/courses">
