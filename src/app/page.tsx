@@ -63,7 +63,7 @@ export default function LandingPage() {
       />
 
       {/* Hero Section */}
-      <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b pt-24 backdrop-blur-lg sm:py-32">
+      <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b pb-16 pt-24 backdrop-blur-lg sm:py-32">
         <div className="max-w-8xl mx-auto px-6 lg:px-8 xl:px-50">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
