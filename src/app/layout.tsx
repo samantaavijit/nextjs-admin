@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import { Providers } from "./providers";
 import StyledComponentsRegistry from "./registry";
+import { Space_Grotesk } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
@@ -15,10 +16,15 @@ export const metadata: Metadata = {
   description: "Learning with TLA",
 };
 
+const font = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={`${font.className} antialiased`}>
         <Providers>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </Providers>
