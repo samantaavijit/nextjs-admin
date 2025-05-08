@@ -8,6 +8,7 @@ import type { PropsWithChildren } from "react";
 import { Providers } from "./providers";
 import StyledComponentsRegistry from "./registry";
 import { Space_Grotesk } from "next/font/google";
+import Footer from "@/components/Layouts/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={`${font.className} antialiased`}>
         <Providers>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <Footer />
         </Providers>
       </body>
     </html>
