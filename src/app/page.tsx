@@ -214,7 +214,8 @@ export default function LandingPage() {
       {/* Popular Courses Section */}
       <section className="w-full py-10 backdrop-blur-lg">
         <div className="mx-auto w-[80%] pb-8 pt-8">
-          <div className="flex items-center justify-between">
+          {/* Make flex direction column on mobile, row on md+ */}
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
               Popular Courses
             </h2>
