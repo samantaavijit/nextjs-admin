@@ -215,7 +215,12 @@ export default function LandingPage() {
       <section className="w-full py-10 backdrop-blur-lg">
         <div className="mx-auto w-[80%] pb-8 pt-8">
           {/* Make flex direction column on mobile, row on md+ */}
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-delay="150"
+            className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+          >
             <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
               Popular Courses
             </h2>
@@ -226,7 +231,16 @@ export default function LandingPage() {
 
           <div className="mt-10 grid grid-cols-1 gap-10 md:mt-16 lg:grid-cols-2 xl:grid-cols-3">
             {courses.map((course, key) => {
-              return <CourseCard key={key} course={course} />;
+              return (
+                <div
+                  data-aos="fade-right"
+                  data-aos-anchor-placement="top-center"
+                  data-aos-delay={`${key * 150}`}
+                  key={key}
+                >
+                  <CourseCard course={course} />
+                </div>
+              );
             })}
           </div>
         </div>
