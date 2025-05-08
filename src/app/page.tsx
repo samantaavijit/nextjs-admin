@@ -28,7 +28,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden pt-24">
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
       <motion.div
         className="absolute inset-0 -z-10"
         initial={{ opacity: 0 }}
