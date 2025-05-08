@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 import { useEffect } from "react";
+import { FaArrowRight, FaAward } from "react-icons/fa";
 
 export default function LandingPage() {
   const popularCourses = [
@@ -121,16 +122,78 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <Tilt>
-              <div data-aos="fade-left" data-aos-delay="1050">
+            <div
+              className="relative hidden lg:block"
+              data-aos="fade-left"
+              data-aos-delay="1050"
+            >
+              <Tilt>
                 <Image
                   src="/hero.png"
                   alt="Programming Illustration"
                   width={600}
                   height={450}
                 />
+              </Tilt>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* About Section */}
+
+      <div className="bg-slate-500/10 pb-16 pt-16 backdrop-blur-lg sm:my-32">
+        <div className="mx-auto grid w-4/5 grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <div>
+            <div className="flex items-center space-x-4">
+              <div className="flex h-12 w-12 flex-col items-center justify-center rounded-full bg-rose-600">
+                <FaAward className="h-6 w-6 text-white" />
               </div>
-            </Tilt>
+              <h1 className="text-xl font-semibold text-slate-50">
+                Trusted and Recognized
+              </h1>
+            </div>
+            <h1 className="mt-8 text-2xl font-bold text-white sm:text-3xl md:text-4xl md:leading-[3rem] lg:text-6xl lg:leading-[3.5rem] xl:leading-[3.9rem]">
+              Build Computer skills with experts.
+            </h1>
+            <p className="mt-4 text-gray-5">
+              Gain hands-on experience with expert mentors and structured
+              curriculum designed to boost your skills.
+            </p>
+            <button className="mt-8 flex items-center space-x-2 rounded-3xl bg-black px-8 py-3 text-white transition-all duration-200 hover:bg-gray-700">
+              <span>Learn More</span>
+              <FaArrowRight />
+            </button>
+          </div>
+          <div>
+            <div>
+              <h1 className="text-7xl font-bold text-gray-3 text-opacity-5 lg:text-9xl">
+                01
+              </h1>
+              <div className="-mt-10">
+                <h1 className="mb-3 text-xl font-bold text-white text-opacity-70 md:text-2xl">
+                  Personalized Learning
+                </h1>
+                <p className="w-[90%] text-base text-gray-300 text-opacity-60 lg:w-[70%]">
+                  Get one-on-one guidance with expert faculty and structured
+                  learning plans for better understanding.
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 w-full">
+              <h1 className="text-7xl font-bold text-gray-3 text-opacity-5 lg:text-9xl">
+                02
+              </h1>
+              <div className="-mt-10">
+                <h1 className="mb-3 text-xl font-bold text-white text-opacity-70 md:text-2xl">
+                  Affordable Tuition
+                </h1>
+                <p className="w-[90%] text-base text-gray-300 text-opacity-60 lg:w-[70%]">
+                  Quality education at budget-friendly fees, making learning
+                  accessible for every student.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
