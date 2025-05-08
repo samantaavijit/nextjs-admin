@@ -1,4 +1,6 @@
 "use client";
+
+import Button from "@/components/custom/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -70,12 +72,12 @@ export default function LandingPage() {
                 beyond.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                {/* <Link href="/courses">
-                  <Button variant="primary">Browse Courses</Button>
+                <Link href="/courses">
+                  <Button text="Get Started" />
                 </Link>
                 <Link href="/about">
-                  <Button variant="secondary">Learn More</Button>
-                </Link> */}
+                  <Button text="Learn More" variant="learn_more" />
+                </Link>
               </div>
             </motion.div>
             <motion.div
@@ -88,7 +90,6 @@ export default function LandingPage() {
                 <Image
                   src="/hero.png"
                   alt="Programming Illustration"
-                  // className="mx-auto h-auto w-full max-w-lg"
                   width={600}
                   height={450}
                 />
