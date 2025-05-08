@@ -11,10 +11,7 @@ import { Space_Grotesk } from "next/font/google";
 import Footer from "@/components/Layouts/Footer";
 
 export const metadata: Metadata = {
-  title: {
-    template: "TLA - Transform Your Future",
-    default: "TLA - Transform Your Future",
-  },
+  title: "TLA - Transform Your Future",
   description: "Learning with TLA",
 };
 
