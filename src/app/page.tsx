@@ -251,7 +251,7 @@ export default function LandingPage() {
         <div className="mx-auto mt-8 grid w-[80%] grid-cols-1 items-center gap-12 xl:grid-cols-2">
           {/* IMAGE */}
           <Tilt>
-            <div>
+            <div data-aos="zoom-in" data-aos-anchor-placement="top-center">
               <Image
                 src="/f.png"
                 alt="Learning Experience"
@@ -262,7 +262,11 @@ export default function LandingPage() {
           </Tilt>
           {/* TEXT */}
 
-          <div>
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-center"
+            data-aos-delay="150"
+          >
             {/* Sub heading */}
             <div className="flex items-center space-x-4">
               <div className="flex h-12 w-12 flex-col items-center justify-center rounded-full bg-rose-600">
