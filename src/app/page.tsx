@@ -141,10 +141,9 @@ export default function LandingPage() {
       </div>
 
       {/* About Section */}
-
       <div className="bg-slate-500/10 pb-16 pt-16 backdrop-blur-lg sm:my-32">
         <div className="mx-auto grid w-4/5 grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div>
+          <div data-aos="fade-right" data-aos-anchor-placement="top-center">
             <div className="flex items-center space-x-4">
               <div className="flex h-12 w-12 flex-col items-center justify-center rounded-full bg-rose-600">
                 <FaAward className="h-6 w-6 text-white" />
@@ -165,7 +164,11 @@ export default function LandingPage() {
               <FaArrowRight />
             </button>
           </div>
-          <div>
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-center"
+            data-aos-delay="150"
+          >
             <div>
               <h1 className="text-7xl font-bold text-gray-3 text-opacity-5 lg:text-9xl">
                 01
@@ -201,19 +204,11 @@ export default function LandingPage() {
       {/* Popular Courses Section */}
       <section className="bg-dark-200/50 w-full py-24 backdrop-blur-lg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mx-auto max-w-2xl text-center"
-          >
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
               Popular Courses
             </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-300">
-              Choose from our most popular programming courses
-            </p>
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
