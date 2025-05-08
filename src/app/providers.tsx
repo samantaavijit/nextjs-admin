@@ -8,12 +8,28 @@ import AnimatedBackground from "@/utils/AnimatedBackground";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
 import NextTopLoader from "nextjs-toploader";
+import { useEffect } from "react";
+import AOS from "aos";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin");
   const isStudentRoute = pathname.startsWith("/student");
   const isNormalUserRoute = pathname.startsWith("/user");
+
+  useEffect(() => {
+    const initiAOS = async () => {
+      await import("aos");
+
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    };
+    initiAOS();
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">

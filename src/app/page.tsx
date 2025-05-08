@@ -1,11 +1,10 @@
 "use client";
-import AOS from "aos";
+
 import Button from "@/components/custom/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
-import { useEffect } from "react";
 import { FaArrowRight, FaAward } from "react-icons/fa";
 import CourseCard from "@/components/CourseCard";
 
@@ -42,20 +41,6 @@ export default function LandingPage() {
         "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     },
   ];
-
-  useEffect(() => {
-    const initiAOS = async () => {
-      await import("aos");
-
-      AOS.init({
-        duration: 1000,
-        easing: "ease",
-        once: true,
-        anchorPlacement: "top-bottom",
-      });
-    };
-    initiAOS();
-  }, []);
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
