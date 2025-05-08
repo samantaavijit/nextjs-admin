@@ -1,10 +1,11 @@
 "use client";
-
+import AOS from "aos";
 import Button from "@/components/custom/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
+import { useEffect } from "react";
 
 export default function LandingPage() {
   const popularCourses = [
@@ -30,6 +31,20 @@ export default function LandingPage() {
       image: "/react.svg",
     },
   ];
+
+  useEffect(() => {
+    const initiAOS = async () => {
+      await import("aos");
+
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    };
+    initiAOS();
+  }, []);
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
@@ -57,44 +72,72 @@ export default function LandingPage() {
       <div className="from-dark-200/50 to-dark-300/50 w-full bg-gradient-to-b pt-24 backdrop-blur-lg sm:py-32">
         <div className="max-w-8xl mx-auto px-6 lg:px-8 xl:px-50">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-left"
-            >
-              <h1 className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <div>
+              <h1
+                data-aos="fade-right"
+                className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+              >
                 Smart Learning for a Digital Future.
               </h1>
-              <p className="mt-6 text-sm text-white text-opacity-60 md:text-base">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="150"
+                className="mt-6 text-sm text-white text-opacity-60 md:text-base"
+              >
                 Empower your future with high-quality Computer education. Join
                 our expert-led courses and excel in academics, programming, and
                 beyond.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <Link href="/courses">
+                <Link data-aos="zoom-in" data-aos-delay="300" href="/courses">
                   <Button text="Get Started" />
                 </Link>
-                <Link href="/about">
+                <Link data-aos="zoom-in" data-aos-delay="450" href="/about">
                   <Button text="Learn More" variant="learn_more" />
                 </Link>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <Tilt>
+
+              <div className="mt-8 flex flex-wrap items-center space-x-16">
+                {/* <div>
+                  <p className="text-base font-bold text-white md:text-xl lg:text-2xl">
+                    260+
+                  </p>
+                  <p className="mb-2 mt-2 h-[3px] w-[100px] rounded-lg bg-green-600" />
+                  <p className="text-sm text-white text-opacity-70 md:text-lg">
+                    Tutors
+                  </p>
+                </div> */}
+                <div data-aos="fade-up" data-aos-delay="600">
+                  <p className="text-base font-bold text-white md:text-xl lg:text-2xl">
+                    95+
+                  </p>
+                  <p className="mb-2 mt-2 h-[3px] w-[100px] rounded-lg bg-blue-600" />
+                  <p className="text-sm text-white text-opacity-70 md:text-lg">
+                    Students
+                  </p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="750">
+                  <p className="text-base font-bold text-white md:text-xl lg:text-2xl">
+                    15+
+                  </p>
+                  <p className="mb-2 mt-2 h-[3px] w-[100px] rounded-lg bg-pink-600" />
+                  <p className="text-sm text-white text-opacity-70 md:text-lg">
+                    Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Tilt>
+              <div data-aos="fade-left" data-aos-delay="1050">
                 <Image
                   src="/hero.png"
                   alt="Programming Illustration"
                   width={600}
                   height={450}
                 />
-              </Tilt>
-            </motion.div>
+              </div>
+            </Tilt>
           </div>
         </div>
       </div>
