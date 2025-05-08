@@ -27,8 +27,15 @@ export default function CoursesPage() {
 
         <section className="px-6 py-12 md:px-12">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 xl:grid-cols-3">
-            {COURSES.map((item, key) => (
-              <CourseCard key={key} course={item} />
+            {COURSES.map((course, key) => (
+              <div
+                data-aos="fade-right"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay={`${key * 100}`}
+                key={key}
+              >
+                <CourseCard course={course} />
+              </div>
             ))}
           </div>
         </section>
