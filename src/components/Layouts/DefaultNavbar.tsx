@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+
 import Link from "next/link";
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
@@ -11,8 +11,8 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Courses", href: "/courses" },
-  { name: "Dashboard", href: "/dashboard" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function DefaultNavbar() {
@@ -27,18 +27,13 @@ export default function DefaultNavbar() {
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex lg:flex-1"
-        >
+        <div className="flex lg:flex-1" data-aos="fade-right">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent">
               Tech Learn Academy
             </span>
           </Link>
-        </motion.div>
+        </div>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -49,12 +44,7 @@ export default function DefaultNavbar() {
             <MdMenu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="hidden lg:flex lg:gap-x-12"
-        >
+        <div data-aos="fade-down" className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -66,17 +56,15 @@ export default function DefaultNavbar() {
               {item.name}
             </Link>
           ))}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        </div>
+        <div
+          data-aos="fade-left"
           className="hidden lg:flex lg:flex-1 lg:justify-end"
         >
           <Link href="/auth/sign-in">
             <LoginButton />
           </Link>
-        </motion.div>
+        </div>
       </nav>
 
       <Dialog
